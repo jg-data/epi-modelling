@@ -17,8 +17,8 @@ G_SIR.add_nodes_from(['S', 'I', 'R'], type='species')
 
 #G.add_nodes_from(['infect', 'recover'], type='transaction')
 
-G_SIR.add_node('infect', rate=0.6, type='transaction')
-G_SIR.add_node('recover', rate=0.2, type='transaction')
+G_SIR.add_node('infect', rate=0.6, type='transaction', latex=r'\beta', var='beta')
+G_SIR.add_node('recover', rate=0.2, type='transaction', latex=r'\gamma', var='gamma')
 
 G_SIR.add_edges_from([('S', 'infect'),
                   ('I', 'infect'),
@@ -28,7 +28,7 @@ G_SIR.add_edges_from([('S', 'infect'),
                   ('recover','R')
                   ])
 
-G_SIR.graph['label_offset'] = 0.02
+G_SIR.graph['label_offset'] = 0.13
 G_SIR.graph['figsize'] = (9, 2)
 G_SIR.graph['pos'] = {
     'S': (0, 0),
@@ -55,11 +55,9 @@ G_SIRD.name = 'SIRD'
 
 G_SIRD.add_nodes_from(['S', 'I', 'R', 'D'], type='species')
 
-#G.add_nodes_from(['infect', 'recover'], type='transaction')
-
-G_SIRD.add_node('infect', rate=0.6, type='transaction')
-G_SIRD.add_node('recover', rate=0.2, type='transaction')
-G_SIRD.add_node('death', rate=0.003, type='transaction')
+G_SIRD.add_node('infect', rate=0.6, type='transaction', latex=r'\beta', var='beta')
+G_SIRD.add_node('recover', rate=0.2, type='transaction', latex=r'\gamma', var='gamma')
+G_SIRD.add_node('death', rate=0.003, type='transaction', latex=r'\delta', var='delta')
 
 G_SIRD.add_edges_from([('S', 'infect'),
                   ('I', 'infect'),

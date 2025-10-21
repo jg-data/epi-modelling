@@ -2,7 +2,7 @@
 
 ## Overview
 
-Code which allows you to construct and rum simulations for simple compartmental models, like the SIR model and its extensions.
+This code can construct and run simulations for simple compartmental models, like the SIR model and its extensions.
 
 The code includes:
  - examples of stochastic Petri nets with added data
